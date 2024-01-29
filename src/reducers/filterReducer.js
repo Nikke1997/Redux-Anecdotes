@@ -1,6 +1,24 @@
+import { createSlice } from "@reduxjs/toolkit";
 
 
 
+const filtSlice = createSlice({
+    name: "filter",
+    initialState: "",
+    reducers: {
+        setFilter(state, action) {
+        return action.payload;
+        },
+    },
+    });
+
+
+
+
+
+
+
+/*
 const filterReducer = (state = '' , action) => {
   switch (action.type) {
     case "SET_FILTER": {
@@ -20,6 +38,7 @@ export const setFilter = (filterValue) => {
     type: "SET_FILTER",
     payload: { filterValue },
   };
-};
+};*/
 
-export default filterReducer;
+export const { setFilter } = filtSlice.actions;
+export default filtSlice.reducer;
